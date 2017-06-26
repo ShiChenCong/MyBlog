@@ -31,13 +31,14 @@ function mapDispatchToProps(dispatch) {
     dispatch
   };
 }
-// @connect(mapStateToProps, mapDispatchToProps)
+@connect(mapStateToProps, mapDispatchToProps)
 class IndexPage extends React.Component {
 	constructor(props) {
 		super(props);
 	}
 
 	render() {
+        console.log(this.props)
 		return(
 			<div>
 				IndexPage
@@ -46,5 +47,5 @@ class IndexPage extends React.Component {
 	}
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(IndexPage)
-// export default IndexPage
+// export default connect(mapStateToProps,mapDispatchToProps)(IndexPage)
+export default IndexPage

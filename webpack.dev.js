@@ -18,9 +18,13 @@ module.exports = {
 				test: /\.(js|jsx)$/,
 				exclude: /node_modules/,
 				use: {
-					loader: 'babel-loader?stage=0',
+					loader: 'babel-loader',
 					options: {
-						presets: ['react', 'es2015']
+						presets: ['react', 'es2015','stage-0'],
+						plugins:[
+							['import',[{libraryName:'antd',style:'css'}]],
+							'transform-decorators-legacy',
+						]
 					}
 				}
 			}, {
