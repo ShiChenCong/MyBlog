@@ -18,6 +18,7 @@ export default class Editor extends Component {
 		return (
 			<div className='container'>
 				<textarea onChange = { this.populateText }></textarea>
+				<div></div>
 			</div>
 		)
 	}
