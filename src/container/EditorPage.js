@@ -8,8 +8,8 @@ import '../static/markdown.css';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as EditorActions  from '../actions/EditorActions.js';
-
-
+import {highlightAuto} from 'highlight.js'
+console.log(highlightAuto)
 
 @connect((state) => {
 	return {states: state}
@@ -26,6 +26,12 @@ export default class EditorPage extends Component {
 		this.state = {
 			content:''
 		}
+
+		// marked.setOptions({
+		//   highlight: function (code) {
+		//     return require('highlight.js').highlightAuto(code).value;
+		//   }
+		// });
 	}
 
 	//实时修改
