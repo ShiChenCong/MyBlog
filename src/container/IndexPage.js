@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as IndexActions from '../actions/IndexActions.js';
-import {bindActionCreators} from 'redux';
+import { bindActionCreators } from 'redux';
 import {Map} from 'immutable';
 //
 // @connect(
@@ -10,28 +10,15 @@ import {Map} from 'immutable';
 //     ...IndexActions
 //   }
 // )
-function mapStateToProps(state) {
-  return {
-    state
-  };
-}
+@connect((state) => {
+	return {states: state}
+}, (dispatch) => {
+	return {
+		actions: bindActionCreators(IndexActions, dispatch),
+		dispatch
+	}
+})
 
-const actions = [
-    IndexActions
-];
-
-function mapDispatchToProps(dispatch) {
-  const creators = Map()
-      .merge(...actions)
-      .filter(value => typeof value === 'function')
-      .toObject();
-
-  return {
-    actions: bindActionCreators(creators, dispatch),
-    dispatch
-  };
-}
-@connect(mapStateToProps, mapDispatchToProps)
 class IndexPage extends React.Component {
 	constructor(props) {
 		super(props);

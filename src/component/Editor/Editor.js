@@ -1,24 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Button } from 'antd'
 import './styles.less'
 
-export default class Editor extends Component {
-	constructor(props){
-		super(props);
-		this.state = {
-			content:''
-		}
-	}
 
-	populateText = (e) => {
-		console.log(e.target.value)
-	}
+export default class Editor extends Component {
 
 	render() {
 		return (
 			<div className='container'>
-				<textarea onChange = { this.populateText }></textarea>
-				<div></div>
+				<div className='markdown-body'>
+					<textarea onChange = { this.props.populateText }></textarea>
+					<div dangerouslySetInnerHTML={ this.props.getMarkdownText }></div>
+				</div>
+				 <Button type="primary" onClick={ this.props.submit }>提交</Button>
 			</div>
 		)
 	}

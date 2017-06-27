@@ -6,7 +6,7 @@ const initial = {
 function IndexReducer (state = initial,action={}){
 	switch(action.type){
 		case 'TEST':
-			console.log('congratulate success')
+			console.log(action.payload)
 	}
 	return state
 }
