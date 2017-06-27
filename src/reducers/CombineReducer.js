@@ -1,9 +1,11 @@
 import { combineReducers } from 'redux';
-import IndexReducer from './IndexReducer';
 import { routerReducer } from 'react-router-redux'
+import IndexReducer from './IndexReducer';
+import EditorReducer from './EditorReducer';
 
 const rootReducer = combineReducers({
 	IndexReducer,
-	routerReducer
+	routerReducer,
+	EditorReducer
 })
 export default rootReducer

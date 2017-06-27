@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import Editor from '../component/Editor/Editor.js'
-import marked from 'marked'
-import '../static/highlight.pack.js'
-import '../static/highlight.css'
-import '../static/markdown.css'
+import Editor from '../component/Editor/Editor.js';
+import { Button } from 'antd';
+import marked from 'marked';
+import '../static/highlight.pack.js';
+import '../static/highlight.css';
+import '../static/markdown.css';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as EditorActions  from '../actions/EditorActions.js';
@@ -40,16 +41,18 @@ export default class EditorPage extends Component {
 
 	//加了这个markdown才有样式
 	componentDidMount() {
-		document.querySelectorAll('.markdown-body code').forEach((val, index) => {
-		  hljs.highlightBlock(val);
-		 })
+		document.querySelectorAll('pre code').forEach((val, index) => {
+		  	hljs.highlightBlock(val);
+		})
 	}
 
 
 	render() {
-		console.log(this.props)
 		return (
-			<Editor populateText ={ this.populateText } getMarkdownText={ this.getMarkdownText() } submit={() => {this.props.actions.SubmitText(this.state.content)}}/>
+			<div className='container'>
+				<Button type="primary" onClick={() => { this.props.actions.SubmitText(this.state.content)} }>提交</Button>
+				<Editor populateText ={ this.populateText } getMarkdownText={ this.getMarkdownText() }/>
+			</div>
 		)
 	}
 }
