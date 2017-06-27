@@ -5,7 +5,7 @@ const initial = {
 
 function IndexReducer (state = initial,action={}){
 	switch(action.type){
-		case 'SEND_TEXT': 
+		case 'SEND_TEXT':
 			console.log(action.payload)
 	}
 	return state
