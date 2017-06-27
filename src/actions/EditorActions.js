@@ -1,6 +1,6 @@
 export function SubmitText(data) {
 	return {
-		type:'TEST',
+		type:'SEND_TEXT',
 		payload:data
 	}
 }
