@@ -40,8 +40,8 @@ export default class EditorPage extends Component {
 	}
 
 	//加了这个markdown才有样式
-	componentDidMount() {
-		document.querySelectorAll('pre code').forEach((val, index) => {
+	componentDidUpdate() {
+		document.querySelectorAll('.markdown-body code').forEach((val, index) => {
 		  	hljs.highlightBlock(val);
 		})
 	}
