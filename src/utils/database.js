@@ -2,7 +2,7 @@ const url = 'localhost:3000';
 const reqHeaders =  {'Accept': 'application/json', 'Content-Type': 'application/json'};
 
 
-class DataBase {
+class database {
 	//添加文章
 	addArticle(text) {
 		return fetch(`http://${url}/addArticle`, {
@@ -20,8 +20,8 @@ class DataBase {
 		})
 	}
 }
-
-export  default let databaseFactory = (function () {
+let databaseFactory = null;
+export  default  databaseFactory = (function () {
 
       let instance;
 

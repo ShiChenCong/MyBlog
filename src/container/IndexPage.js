@@ -28,7 +28,12 @@ class IndexPage extends React.Component {
         console.log(this.props)
 		return(
 			<div>
-				IndexPage
+				<div className="con">
+					<div id="canvas"></div>
+				</div>
+				<video autoPlay loop="loop" muted="">
+				    <source src="https://d3hondn7jdiz1d.cloudfront.net/resources/bg-video.mp4" type="video/mp4" />
+				</video>
 			</div>
 		)
 	}

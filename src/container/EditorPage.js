@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as EditorActions  from '../actions/EditorActions.js';
 import {highlightAuto} from 'highlight.js'
-console.log(highlightAuto)
+
 
 @connect((state) => {
 	return {states: state}
