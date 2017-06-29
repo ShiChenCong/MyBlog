@@ -1,7 +1,7 @@
-import DataBase from '../utils/database'
-const database = new DataBase();
+import databaseFactory from '../utils/database'
+
 export const SubmitText = (data) => dispatch => {
-	return database.addArticle(data)
+	return databaseFactory.addArticle(data)
 		.then((data) => {
 			console.log(data)
 		}).catch((err) => {
