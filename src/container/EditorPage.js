@@ -10,7 +10,6 @@ import { bindActionCreators } from 'redux';
 import * as EditorActions  from '../actions/EditorActions.js';
 import {highlightAuto} from 'highlight.js'
 
-
 @connect((state) => {
 	return {states: state}
 }, (dispatch) => {
@@ -56,7 +55,9 @@ export default class EditorPage extends Component {
 	render() {
 		return (
 			<div className='container'>
-				<Button type="primary" onClick={() => { this.props.actions.SubmitText(this.state.content)} }>提交</Button>
+				<div className='header'>
+					<Button type="primary" size='large' onClick={() => { this.props.actions.SubmitText(this.state.content)} }>提交</Button>
+				</div>
 				<Editor populateText ={ this.populateText } getMarkdownText={ this.getMarkdownText() }/>
 			</div>
 		)
