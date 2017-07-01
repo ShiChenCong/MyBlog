@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import * as IndexActions from '../actions/IndexActions.js';
+import * as IndexActions from '../../actions/IndexActions.js';
 import { bindActionCreators } from 'redux';
 import {Map} from 'immutable';
-import canvas from '../configs/effect'
+import canvas from '../../configs/effect'
 
 const intoBlog = {
 	position:'fixed',

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import Editor from '../component/Editor/Editor.js';
+import Editor from '../../component/Editor/Editor.js';
 import { Button } from 'antd';
 import marked from 'marked';
-import '../static/highlight.pack.js';
-import '../static/highlight.css';
-import '../static/markdown.css';
+import '../../static/highlight.pack.js';
+import '../../static/highlight.css';
+import '../../static/markdown.css';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as EditorActions  from '../actions/EditorActions.js';
+import * as EditorActions  from '../../actions/EditorActions.js';
 import {highlightAuto} from 'highlight.js'
 
 @connect((state) => {
