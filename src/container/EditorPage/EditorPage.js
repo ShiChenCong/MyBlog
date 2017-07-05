@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Editor from '../../component/Editor/Editor.js';
-import { Button } from 'antd';
 import marked from 'marked';
 import '../../static/highlight.pack.js';
 import '../../static/highlight.css';
@@ -56,7 +55,7 @@ export default class EditorPage extends Component {
 		return (
 			<div className='container'>
 				<div className='header'>
-					<Button type="primary" size='large' onClick={() => { this.props.actions.SubmitText(this.state.content)} }>提交</Button>
+					<button type="primary" size='large' onClick={() => { this.props.actions.SubmitText(this.state.content)} }>提交</button>
 				</div>
 				<Editor populateText ={ this.populateText } getMarkdownText={ this.getMarkdownText() }/>
 			</div>

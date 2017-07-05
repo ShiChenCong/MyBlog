@@ -33,14 +33,13 @@ class IndexPage extends React.Component {
 	render() {
         console.log(this.props)
 		return(
-			<div>
-				<div className="con">
-					<div id="canvas"></div>
-
-				</div>
-				<video autoPlay loop="loop" muted="">
+			<div className="con" id="canvas">
+				{/* <div className="con" id="canvas"> */}
+					{/* <div id="canvas"></div> */}
+				{/* </div> */}
+				{/* <video autoPlay loop="loop" muted="">
 				    <source src="https://d3hondn7jdiz1d.cloudfront.net/resources/bg-video.mp4" type="video/mp4" />
-				</video>
+				</video> */}
 				<button style = { intoBlog }  onClick={() => {this.props.history.push('/blog')}}>进入博客</button>
 			</div>
 		)
