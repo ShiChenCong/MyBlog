@@ -8,6 +8,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as EditorActions  from '../../actions/EditorActions.js';
 import {highlightAuto} from 'highlight.js'
+import moment from 'moment'
+import './index.less'
+import find from '../../utils/find.js'
 
 @connect((state) => {
 	return {states: state}
@@ -51,11 +54,27 @@ export default class EditorPage extends Component {
 	}
 
 
+	SubmitText = () => {
+		let header = find('query','.header input').value;
+		if( header == ''){
+			alert('标题不能为空');
+			return
+		}
+		let self = this;
+		let data = {
+			time:new moment(),
+			data:self.state.content,
+			header:header
+		}
+		self.props.actions.SubmitText(data)
+	}
+
 	render() {
 		return (
 			<div className='container'>
 				<div className='header'>
-					<button type="primary" size='large' onClick={() => { this.props.actions.SubmitText(this.state.content)} }>提交</button>
+					<button type="primary" size='large' onClick={() => { this.SubmitText() }}>提交</button>
+					<input placeholder='请输入文章标题'></input>
 				</div>
 				<Editor populateText ={ this.populateText } getMarkdownText={ this.getMarkdownText() }/>
 			</div>
