@@ -3,7 +3,7 @@ import { Route, Link, Switch,  BrowserRouter as Router, Redirect} from 'react-ro
 import IndexPage from '../container/IndexPage/IndexPage'
 import EditorPage from '../container/EditorPage/EditorPage'
 import { Blog } from '../container/BlogPage'
-import NavPage from '../container/Nav/NavPage.js'
+import NavPage from '../container/NavPage/NavPage.js'
 
 const Routes = (store, history) => (
     <Router>

@@ -8,14 +8,13 @@ import  Nav from '../../component/Nav/Nav.js'
 export default class NavPage extends React.Component {
 	constructor(props){
 		super(props)
-		console.log(this.props)
 	}
 
 	render() {
 		return (
 			<div>
 				<Nav />
-				{ this.props.children }
+				{ this.props.children}
 			</div>
 		);
 	}

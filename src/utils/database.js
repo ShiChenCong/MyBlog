@@ -8,7 +8,7 @@ class database {
 		return fetch(`http://${url}/addArticle`, {
 			method: 'POST',
 			headers: reqHeaders,
-			body: JSON.stringify({text: text})
+			body: JSON.stringify({...text})
 		}).then((res) => {
 			if (res.ok) {
 				return true
@@ -19,7 +19,21 @@ class database {
 			return err
 		})
 	}
+
+	//查询全部文章的标题和时间
+	queryHeaderAndTime(limit, page, collection) {
+		return fetch(`http://${url}/queryHeaderAndTime?limit=${limit}&page=${page}&collection=${collection}`).then((res) => {
+			return res.json()
+		}).catch((err) => {
+			return err
+		})
+	}
+
+
 }
+
+
+
 let databaseFactory = null;
 export  default  databaseFactory = (function () {
 
