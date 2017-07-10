@@ -4,7 +4,6 @@ import * as IndexActions from '../../actions/IndexActions.js';
 import { bindActionCreators } from 'redux';
 import {Map} from 'immutable';
 import canvas from '../../configs/effect'
-
 const intoBlog = {
 	position:'fixed',
 	top:'50%',

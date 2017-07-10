@@ -8,6 +8,7 @@ const {
 export const queryHeaderAndTime = (limit, page, collection) => dispatch => {
 	return databaseFactory.queryHeaderAndTime(limit, page, collection)
 		.then((data) => {
+			console.log(data)
 			dispatch(list(data));
 		}).catch((err) => {
 			console.log(err)

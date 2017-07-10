@@ -22,8 +22,8 @@ class database {
 
 	//查询全部文章的标题和时间
 	queryHeaderAndTime(limit, page, collection) {
-		return fetch(`http://${url}/queryHeaderAndTime?limit=${limit}&page=${page}&collection=${collection}`).then((res) => {
-			return res.json()
+		return fetch(`http://${url}/queryHeaderAndTime?limit=${limit}&page=${page}&collection=${collection}`).then((res) => {return res.json()}).then((data) => {
+			return data
 		}).catch((err) => {
 			return err
 		})

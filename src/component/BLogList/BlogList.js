@@ -1,21 +1,22 @@
-import React, { Component } from 'react';
-import FontAwesome from 'react-fontawesome';
-
+import React, {Component} from 'react';
+import moment from 'moment'
 export default class BlogList extends Component {
 	constructor(props){
 		super(props);
 	}
 
 	render() {
-		let data = this.props.BlogListReducer.BlogList.toJS();
+		let data = this.props.states.BlogListReducer.toJS().BlogList.map( ({header, time}, key) =>
+				<li  key={ key }>
+					<span>{ header }</span>
+					<div><i className="fa fa-calendar fa-lg"></i>{ moment(time).format("YYYY-MM-DD") }</div>
+				</li>
+			)
+			
 		return (
-			<FontAwesome
-        className='fa-pied-piper'
-        name='rocket'
-        size='2x'
-        spin
-        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)' }}
-      />
+			<ul>
+				{ data }
+			</ul>
 		)
 	}
 }

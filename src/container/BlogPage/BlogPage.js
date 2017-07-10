@@ -3,12 +3,14 @@ import BlogList from '../../component/BLogList/BlogList.js'
 import * as Actions from '../../actions/BlogListActions'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
+import './index.less'
+
 
 @connect((state) => {
 	return {states:state}
 },(dispatch) => {
 	return {
-		actions:bindActionCreators(Actions, dispatch),
+		actions:bindActionCreators({...Actions}, dispatch),
 		dispatch
 	}
 })
@@ -18,13 +20,13 @@ export default class BlogPage extends Component {
 	}
 
 	componentDidMount() {
-		this.props.actions.queryHeaderAndTime(2,2,'artilce')
+		this.props.actions.queryHeaderAndTime(10,0,'artilce');
 	}
 
 	render() {
 		return (
-			<div>
-				<BlogList {...this.props.states}/>
+			<div className='BlogPage'>
+				<BlogList   {...this.props} />
 			</div>
 		)
 	}
