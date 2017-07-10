@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import moment from 'moment'
+
 export default class BlogList extends Component {
 	constructor(props){
 		super(props);
@@ -12,7 +12,7 @@ export default class BlogList extends Component {
 					<div><i className="fa fa-calendar fa-lg"></i>{ moment(time).format("YYYY-MM-DD") }</div>
 				</li>
 			)
-			
+
 		return (
 			<ul>
 				{ data }

@@ -1,5 +1,5 @@
 const initial = {
-	name:'scc',
+	name:'ss',
 	age:23
 };
 

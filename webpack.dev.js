@@ -12,7 +12,10 @@ module.exports = {
 		chunkFilename: '[name]-[id].[chunkhash:8].bundle.js'
 	},
 	resolve: {
-		extensions: ['.js']
+		extensions: ['.js'],
+		alias: {
+		   'moments': path.resolve(dir, './node_modules/moment/moment.js')
+	   }
 	},
 	module: {
 		rules: [
@@ -74,7 +77,11 @@ module.exports = {
 				// node_modules内的任何必需模块都将提取给依赖包
 				return (module.resource && /\.js$/.test(module.resource) && module.resource.indexOf(path.join(__dirname, '../node_modules')) === 0)
 			}
-		})
+		}),
+		//全局配置moment
+		new webpack.ProvidePlugin({
+		   moment: 'moments'
+	   }),
 	],
 	devtool: 'cheap-module-source-map',
 	devServer: {

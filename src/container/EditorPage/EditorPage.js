@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as EditorActions  from '../../actions/EditorActions.js';
 import {highlightAuto} from 'highlight.js'
-import moment from 'moment'
+
 import './index.less'
 import find from '../../utils/find.js'
 
