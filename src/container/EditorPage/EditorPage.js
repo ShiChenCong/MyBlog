@@ -70,7 +70,9 @@ export default class EditorPage extends Component {
 	}
 
 	render() {
-		return (
+        console.log(this)
+
+        return (
 			<div className='container'>
 				<div className='header'>
 					<button type="primary" size='large' onClick={() => { this.SubmitText() }}>提交</button>

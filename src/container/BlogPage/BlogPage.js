@@ -4,7 +4,7 @@ import * as Actions from '../../actions/BlogListActions'
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import './index.less'
-
+import { withRouter } from 'react-router'
 
 @connect((state) => {
 	return {states:state}
@@ -14,7 +14,7 @@ import './index.less'
 		dispatch
 	}
 })
-export default class BlogPage extends Component {
+class BlogPage extends Component {
 	constructor(props){
 		super(props)
 	}
@@ -24,6 +24,7 @@ export default class BlogPage extends Component {
 	}
 
 	render() {
+	    console.log(this)
 		return (
 			<div className='BlogPage'>
 				<BlogList   {...this.props} />
@@ -31,3 +32,4 @@ export default class BlogPage extends Component {
 		)
 	}
 }
+export default withRouter (BlogPage)

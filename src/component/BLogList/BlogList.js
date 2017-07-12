@@ -6,10 +6,10 @@ export default class BlogList extends Component {
 	}
 
 	render() {
-		let data = this.props.states.BlogListReducer.toJS().BlogList.map( ({header, time}, key) =>
-				<li  key={ key }>
-					<span>{ header }</span>
-					<div><i className="fa fa-calendar fa-lg"></i>{ moment(time).format("YYYY-MM-DD") }</div>
+		let data = this.props.states.BlogListReducer.toJS().BlogList.map( (value, key) =>
+				<li  key={ key } onClick={() => {console.log(this)}}>
+					<span>{ value['header'] }</span>
+					<div><i className="fa fa-calendar fa-lg"></i>{ moment(value['time']).format("YYYY-MM-DD") }</div>
 				</li>
 			)
 

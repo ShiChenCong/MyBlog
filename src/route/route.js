@@ -4,6 +4,7 @@ import IndexPage from '../container/IndexPage/IndexPage'
 import EditorPage from '../container/EditorPage/EditorPage'
 import { Blog } from '../container/BlogPage'
 import NavPage from '../container/NavPage/NavPage.js'
+import BlogDetail from '../container/BlogDetailPage/BlogDetail'
 
 const Routes = (store, history) => (
     <Router>
@@ -12,6 +13,7 @@ const Routes = (store, history) => (
                 <NavPage>
                     <Route  path='/blog' component={Blog}/>
                     <Route  path='/editor' component={EditorPage}/>
+                    <Route  path='/detail/:id' component={BlogDetail}/>
                 </NavPage>
         </Switch>
     </Router>
