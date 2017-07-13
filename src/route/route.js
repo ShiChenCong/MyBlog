@@ -7,7 +7,7 @@ import NavPage from '../container/NavPage/NavPage.js'
 import BlogDetail from '../container/BlogDetailPage/BlogDetail'
 
 const Routes = (store, history) => (
-    <Router>
+
         <Switch>
                 <Route exact path='/' component={ IndexPage}/>
                 <NavPage>
@@ -16,7 +16,7 @@ const Routes = (store, history) => (
                     <Route  path='/detail/:id' component={BlogDetail}/>
                 </NavPage>
         </Switch>
-    </Router>
+
 )
 
 export default Routes

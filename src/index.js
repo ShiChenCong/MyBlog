@@ -6,10 +6,7 @@ import {Provider} from 'react-redux';
 import createHistory from 'history/createBrowserHistory'
 import configureStore from './store/configureStore.js';
 import {ConnectedRouter} from 'react-router-redux'
-import { Route, Link, Switch,  BrowserRouter as Router, Redirect} from 'react-router-dom'
-import IndexPage from './container/IndexPage/IndexPage'
-import EditorPage from './container/EditorPage/EditorPage'
-import { Blog } from './container/BlogPage'
+
 const store = configureStore();
 const history = createHistory();
 

@@ -24,7 +24,6 @@ class BlogPage extends Component {
 	}
 
 	render() {
-	    console.log(this)
 		return (
 			<div className='BlogPage'>
 				<BlogList   {...this.props} />

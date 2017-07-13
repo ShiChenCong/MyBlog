@@ -9,7 +9,8 @@ module.exports = {
 	output: {
 		path: dir + '/dist',
 		filename: '[name].js',
-		chunkFilename: '[name]-[id].[chunkhash:8].bundle.js'
+		chunkFilename: '[name]-[id].[chunkhash:8].bundle.js',
+        publicPath:'/'
 	},
 	resolve: {
 		extensions: ['.js'],
@@ -87,6 +88,7 @@ module.exports = {
 	devServer: {
 		inline: true,
 		hot: true,
-		historyApiFallback: true
+		historyApiFallback: true,
+        contentBase: "./",
 	}
 }
