@@ -88,7 +88,9 @@ module.exports = {
 	devServer: {
 		inline: true,
 		hot: true,
-		historyApiFallback: true,
+        historyApiFallback:{// 配置browserHistory
+            index:'/index.html'
+        },
         contentBase: "./",
 	}
 }
