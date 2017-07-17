@@ -29,7 +29,15 @@ class database {
 		})
 	}
 
-
+	//根据id查询文章
+	queryById(collection, id){
+		return fetch(`http://${url}/queryById?id=${id}&collection=${collection}`).then((res) => {return res.json()})
+			.then((data) => {
+				return data
+			}).catch((err) =>{
+				return err
+			})
+	}
 }
 
 

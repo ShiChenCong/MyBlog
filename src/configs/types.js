@@ -5,6 +5,9 @@ const AcTypes = keyMirror({
 	SEND_TEXT:null,
 
 	//bloglistpage
-	QUERY_HEADER_TIME:null
+	QUERY_HEADER_TIME:null,
+
+	//blogdetailpage
+	QUERY_BY_ID:null,
 })
 export default AcTypes
