@@ -20,7 +20,7 @@ class BlogPage extends Component {
 	}
 
 	componentDidMount() {
-		this.props.actions.queryHeaderAndTime(10,0,'artilce');
+		this.props.actions.queryHeaderAndTime(10,0,'article');
 	}
 
 	render() {

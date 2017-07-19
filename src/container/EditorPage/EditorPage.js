@@ -7,7 +7,6 @@ import '../../static/markdown.css';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as EditorActions  from '../../actions/EditorActions.js';
-import {highlightAuto} from 'highlight.js'
 
 import './index.less'
 import find from '../../utils/find.js'
@@ -63,14 +62,13 @@ export default class EditorPage extends Component {
 		let self = this;
 		let data = {
 			time:new moment(),
-			data:self.state.content,
+			data:marked(self.state.content),
 			header:header
 		}
 		self.props.actions.SubmitText(data)
 	}
 
 	render() {
-        console.log(this)
 
         return (
 			<div className='container'>

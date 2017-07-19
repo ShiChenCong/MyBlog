@@ -12,10 +12,8 @@ export default class Nav extends Component {
 		return (
 				<nav className="nav">
 					<ul id="menu">
-						<li><NavLink activeClassName="selected"  to='blog'>主页</NavLink></li>
-						<li><NavLink  activeClassName="selected"  to='editor'>主页</NavLink></li>
-						{/* <li><NavLink to='/blog'>博文</NavLink></li> */}
-						{/* <li><NavLink to='/editor'>主页</NavLink></li> */}
+						<li><NavLink activeClassName="selected"  to='/blog'>博文</NavLink></li>
+						<li><NavLink  activeClassName="selected"  to='/editor'>主页</NavLink></li>
 					</ul>
 				</nav>
 
