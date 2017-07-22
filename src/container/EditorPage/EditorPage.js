@@ -73,7 +73,7 @@ export default class EditorPage extends Component {
         return (
 			<div className='container'>
 				<div className='header'>
-					<button type="primary" size='large' onClick={() => { this.SubmitText() }}>提交</button>
+					<div onClick={() => { this.SubmitText() }}>发布文章</div>
 					<input placeholder='请输入文章标题'></input>
 				</div>
 				<Editor populateText ={ this.populateText } getMarkdownText={ this.getMarkdownText() }/>

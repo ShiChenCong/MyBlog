@@ -12,7 +12,7 @@ export default class NavPage extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div style={{height:'100%'}}>
 				<Nav />
 				{ this.props.children}
 			</div>
