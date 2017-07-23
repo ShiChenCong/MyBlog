@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const path = require('path');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 let ExtractTextPlugin = require("extract-text-webpack-plugin");
-// let autoprefixer = require('autoprefixer')
 const dir = path.resolve(__dirname, '');
 module.exports = {
 	entry: dir + '/src/index.js',
@@ -45,10 +44,11 @@ module.exports = {
 				}
 			}, {
 				test: /\.css|less$/,
+                // use: ['style-loader','css-loader', 'less-loader']
 				use: ExtractTextPlugin.extract({
 					fallback: 'style-loader',
 					use: [
-						'css-loader', {
+						'css-loader','less-loader', {
 							loader: 'postcss-loader',
 							options: {
 								plugins() {
@@ -56,9 +56,9 @@ module.exports = {
 								}
 							}
 						},
-						'less-loader'
+
 					]
-				}) //单独提取出来css  如果css太多打包到js里 js会很大
+				}) //单独提取出来css  如果css太多打包到js里 js会很大 建议生产环境使用 提取出来的css 无法热更新
 			}
 		]
 	},
